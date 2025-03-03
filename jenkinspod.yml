@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: jenkins-pod
+  labels:
+    author: supraja
+    app: CI-CD
+spec:
+  containers:
+    - name: myjenkins
+      image: jenkins/jenkins
+      env:
+        - containerPort: 8000
+          hostPort: 9090
+...
