@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ngnix-pod
+  labels:
+    author: supraja
+    app: proxy
+spec:
+  containers:
+    - name: myngnix
+      image: nginx
+
+...
