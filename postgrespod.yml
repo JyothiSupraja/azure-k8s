@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-pod
+  labels:
+    author: supraja
+spec:
+  containers:
+    - name: mypostgres
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: supraja
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRES_DB
+          value: my-db
+...
