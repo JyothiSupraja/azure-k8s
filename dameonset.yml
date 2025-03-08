@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: dameon-ghost
+  labels:
+    author: supraja
+    app: cms
+spec:
+  selector:
+    matchLabels:
+     app: cms
+  template:
+    metadata:
+      labels:
+        app: cms
+    spec:
+      containers:
+        - name: myghost
+          image: ghost
+          env:
+            - name: NODE_ENV
+              value: development
+...
