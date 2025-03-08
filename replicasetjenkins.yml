@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: jenkins-rs
+  namespace: test-ns
+  labels:
+    author: supraja
+    app: webserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: CI-CD
+  template:
+    metadata:
+      labels:
+       type: CI-CD
+    spec:
+      containers:
+        - name: myjenkins
+          image: jenkins/jenkins
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+            - containerPort: 50000
+              hostPort: 9090
+...
